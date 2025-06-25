@@ -1493,7 +1493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@c15t/react@npm:1.3.3":
+"@c15t/react@npm:1.3.3, @c15t/react@npm:^1.3.3":
   version: 1.3.3
   resolution: "@c15t/react@npm:1.3.3"
   dependencies:
@@ -1539,6 +1539,7 @@ __metadata:
   resolution: "@chart-lounge/source@workspace:."
   dependencies:
     "@c15t/nextjs": "npm:^1.3.3"
+    "@c15t/react": "npm:^1.3.3"
     "@eslint/compat": "npm:^1.1.1"
     "@eslint/eslintrc": "npm:^2.1.1"
     "@eslint/js": "npm:^9.8.0"
