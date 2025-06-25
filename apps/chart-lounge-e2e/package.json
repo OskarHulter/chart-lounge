@@ -1,0 +1,10 @@
+{
+  "name": "@chart-lounge/chart-lounge-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@chart-lounge/chart-lounge"
+    ]
+  }
+}

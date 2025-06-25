@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/chart-lounge-e2e"
+    },
+    {
+      "path": "./apps/chart-lounge"
+    }
+  ]
+}
