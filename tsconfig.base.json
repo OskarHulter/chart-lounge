@@ -17,6 +17,8 @@
     "strict": true,
     "target": "es2022",
     "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "allowUmdGlobalAccess": true,
     "customConditions": ["development"]
   }
 }
