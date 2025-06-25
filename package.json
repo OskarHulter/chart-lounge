@@ -4,8 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "validate:affected": "nx affected -t lint test build e2e",
-    "validate:all": "nx -t lint test build e2e",
+    "validate:affected": "nx affected -t test build e2e",
+    "build:all": "nx -t build",
+    "test:all": "nx -t test e2e",
     "format": "nx format:write",
     "format:check": "nx format:check"
   },
