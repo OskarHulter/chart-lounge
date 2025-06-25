@@ -9,6 +9,7 @@
 dist
 tmp
 out-tsc
+*.tsbuildinfo
 
 # Yarn
 .yarn/*

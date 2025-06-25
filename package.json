@@ -4,6 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow yarn",
+    "deduplicate": "yarn dedupe",
+    "init": "corepack enable",
     "validate:affected": "nx affected -t test build e2e",
     "build:all": "nx -t build",
     "test:all": "nx -t test e2e",
@@ -65,5 +68,10 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "engines": {
+    "yarn": "4.9.2",
+    "node": ">=20.11.1"
+  },
+  "engineStrict": true
 }
