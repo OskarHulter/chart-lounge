@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "validate:affected": "nx affected -t lint test build e2e",
+    "validate:all": "nx -t lint test build e2e",
+    "format": "nx format:write",
+    "format:check": "nx format:check"
+  },
   "dependencies": {
     "next": "~15.2.4",
     "react": "19.0.0",
