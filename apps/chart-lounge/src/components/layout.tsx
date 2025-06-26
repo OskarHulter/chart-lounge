@@ -1,11 +1,11 @@
-import ExamplePopover from '@/components/popover/example-popover';
+import { Footer } from '@/components/footer/footer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <body>
       <div className="root">
         {children}
-        <ExamplePopover />
+        <Footer />
       </div>
     </body>
   );
