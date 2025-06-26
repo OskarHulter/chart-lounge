@@ -19,6 +19,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "allowUmdGlobalAccess": true,
+    "noImplicitAny": false,
     "customConditions": ["development"]
   }
 }

@@ -9,14 +9,17 @@
     "deduplicate": "yarn dedupe",
     "init": "corepack enable",
     "validate:affected": "nx affected -t test build e2e",
+    "clean:dist": "rimraf dist apps/*/dist apps/*/.next packages/*/dist",
+    "clean:deps": "rimraf node_modules dist apps/*/node_modules packages/*/node_modules",
+    "clean:caches": "yarn cache clean",
     "build:all": "nx -t build",
     "test:all": "nx -t test e2e",
     "lint": "nx format:write",
     "format:check": "nx format:check"
   },
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-beta.0",
     "@c15t/nextjs": "^1.3.3",
-    "@c15t/react": "^1.3.3",
     "next": "~15.2.4",
     "react": "19.0.0",
     "react-dom": "19.0.0"
@@ -58,6 +61,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "nx": "21.2.1",
     "prettier": "^2.6.2",
+    "rimraf": "^6.0.1",
     "sass": "1.62.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

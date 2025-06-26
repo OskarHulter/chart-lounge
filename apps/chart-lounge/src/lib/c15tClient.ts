@@ -1,7 +1,6 @@
 // lib/c15tClient.js
-import { createClient } from '@c15t/react';
 
-const config = {
+export const c15tClientConfig = {
   mode: process.env.NODE_ENV === 'development' ? 'offline' : 'c15t',
   backendURL:
     process.env.NODE_ENV === 'production'
@@ -27,5 +26,3 @@ const config = {
     },
   },
 };
-
-export const c15tClient = createClient(config);
