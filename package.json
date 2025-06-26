@@ -10,7 +10,7 @@
     "init": "corepack enable",
     "validate:affected": "nx affected -t test build e2e",
     "clean:dist": "rimraf dist apps/*/dist apps/*/.next packages/*/dist",
-    "clean:deps": "rimraf node_modules dist apps/*/node_modules packages/*/node_modules",
+    "clean:deps": "rimraf node_modules apps/*/node_modules packages/*/node_modules",
     "clean:caches": "yarn cache clean",
     "clean:nx": "nx clear-cache",
     "build:all": "nx -t build",
