@@ -1,3 +1,12 @@
+import ExamplePopover from '@/components/popover/example-popover';
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <main className="app">{children}</main>;
+  return (
+    <body>
+      <div className="root">
+        {children}
+        <ExamplePopover />
+      </div>
+    </body>
+  );
 }

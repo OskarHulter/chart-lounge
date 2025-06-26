@@ -10,9 +10,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to !</title>
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <main className="app">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </main>
     </>
   );
 }
