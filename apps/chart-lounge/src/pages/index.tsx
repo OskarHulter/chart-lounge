@@ -6,7 +6,15 @@ import Head from 'next/head';
 import styles from './index.module.css';
 import { Hero } from '@/components/sections/hero';
 import { fetchAssets } from '@/hooks/use-assets';
-import { Layout, Header, InfoBox, AssetList, LinkBox } from '@/components';
+import {
+  Layout,
+  Header,
+  InfoBox,
+  AssetList,
+  LinkBox,
+  AssetForm,
+  AssetCheckboxGroup,
+} from '@/components';
 
 export default function Home() {
   return (
@@ -23,7 +31,6 @@ export default function Home() {
             <h2>Welcome to Chart Lounge</h2>
             <p>Your go-to place for all things charts!</p>
           </div>
-          {/* <main className={styles.main}> */}
           <div className={styles.container}>
             <h1 className={styles.title}>
               Create <span className={styles.pinkSpan}>T3</span> App
@@ -42,8 +49,9 @@ export default function Home() {
               </LinkBox>
             </div>
           </div>
-          {/* </main> */}
         </Hero>
+        <AssetForm />
+        <AssetCheckboxGroup />
         <InfoBox>ℹ️ This page shows how to use SSG with React-Query.</InfoBox>
         <AssetList />
 
