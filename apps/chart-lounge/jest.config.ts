@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   displayName: '@chart-lounge/chart-lounge',
   preset: '../../jest.preset.js',
