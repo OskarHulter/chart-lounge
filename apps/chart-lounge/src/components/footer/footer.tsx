@@ -1,14 +1,15 @@
 import React from 'react';
-import styles from './index.module.scss';
+import styles from './index.module.css';
 import ExamplePopover from '@/components/popover/example-popover';
+const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <span>
-        &copy; {new Date().getFullYear()} Chart Lounge. All rights reserved.
-      </span>
-      <ExamplePopover />
+      <>
+        <span>&copy; {currentYear} Chart Lounge. All rights reserved.</span>
+        <ExamplePopover />
+      </>
     </footer>
   );
 }

@@ -1,22 +1,21 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import 'temporal-polyfill/global';
+import React from 'react';
 
-import './styles.css';
-import Layout from '@/components/layout';
+import { type AppType } from 'next/dist/shared/lib/utils';
+import { Geist } from 'next/font/google';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+import '@/styles/globals.css';
+
+const geist = Geist({
+  subsets: ['latin'],
+});
+
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <>
-      <Head>
-        <title>Welcome to !</title>
-      </Head>
-      <main className="app">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
-    </>
+    <div className={geist.className}>
+      <Component {...pageProps} />
+    </div>
   );
-}
+};
 
-export default CustomApp;
+export default MyApp;
