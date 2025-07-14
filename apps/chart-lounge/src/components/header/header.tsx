@@ -145,6 +145,11 @@ const overviewLinks = [
     description: 'client only page.',
   },
   {
+    href: '/chart',
+    title: 'chart',
+    description: 'Timeseries chart.',
+  },
+  {
     href: '/react/overview/quick-start',
     title: 'Quick Start',
     description: 'Install and assemble your first component.',

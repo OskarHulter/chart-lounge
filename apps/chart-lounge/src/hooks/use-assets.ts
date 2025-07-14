@@ -1,3 +1,4 @@
+import type { generateTimeStream } from '@/lib/data-generators/helpers';
 import { useQuery } from '@tanstack/react-query';
 
 type Asset = {
@@ -6,8 +7,16 @@ type Asset = {
   body: string;
 };
 
-const fetchAssets = async (limit = 10): Promise<Array<Asset>> => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/assets');
+const fetchTimeSeries = async (
+  limit = 100
+): Promise<Array<ReturnType<typeof generateTimeStream>>> => {
+  const response = await fetch('/api/generate-price-history');
+  const data = await response.json();
+  return data.filter((x: Asset) => x.id <= limit);
+};
+
+const fetchAssets = async (limit = 100): Promise<Array<Asset>> => {
+  const response = await fetch('/api/asset');
   const data = await response.json();
   return data.filter((x: Asset) => x.id <= limit);
 };
@@ -19,4 +28,4 @@ const useAssets = (limit: number) => {
   });
 };
 
-export { useAssets, fetchAssets };
+export { useAssets, fetchAssets, fetchTimeSeries };

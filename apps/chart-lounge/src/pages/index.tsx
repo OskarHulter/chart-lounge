@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import styles from './index.module.css';
 import { Hero } from '@/components/sections/hero';
-import { fetchAssets } from '@/hooks/use-assets';
+import { fetchAssets, fetchTimeSeries } from '@/hooks/use-assets';
 import {
   Layout,
   Header,
@@ -67,6 +67,10 @@ export async function getStaticProps() {
   await queryClient.prefetchQuery({
     queryKey: ['assets', 10],
     queryFn: () => fetchAssets(10),
+  });
+  await queryClient.prefetchQuery({
+    queryKey: ['timeSeries', 100],
+    queryFn: () => fetchTimeSeries(100),
   });
 
   return {
