@@ -4,7 +4,7 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-// const env = require("./src/env.js");
+// const env = require('./src/env.js');
 const { composePlugins, withNx } = require('@nx/next');
 
 /**
@@ -16,7 +16,9 @@ const nextConfig = {
     return [
       {
         source: '/api/c15t/:path*',
-        destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
+        destination: `${
+          process.env.NEXT_PUBLIC_C15T_URL || 'http://localhost:3000'
+        }/:path*`,
       },
     ];
   },
