@@ -1,6 +1,6 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2022",
@@ -8,10 +8,9 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
-    /* Strictness */
     "strict": true,
     "checkJs": true,
     "noUncheckedIndexedAccess": true,
@@ -23,13 +22,17 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noEmitOnError": true,
-    /* Bundled projects */
     "lib": ["ES2022"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "baseUrl": ".",
+    "paths": {
+      "@chart-lounge/schema": ["libs/schema/src/index.ts"],
+      "@chart-lounge/server-handlers": ["libs/server-handlers/src/index.ts"]
+    }
   }
 }

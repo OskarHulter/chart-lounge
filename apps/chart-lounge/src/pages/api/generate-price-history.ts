@@ -1,5 +1,5 @@
-import { getStockData } from '@/lib/handler/fetch';
-import type { TimeSeriesData } from '@/lib/schema/asset';
+import { getStockData } from '@/lib/fetchers';
+import { type TimeSeriesData } from '@chart-lounge/schema';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 export const runtime = 'edge';

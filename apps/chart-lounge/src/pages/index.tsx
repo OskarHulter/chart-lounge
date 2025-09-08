@@ -1,20 +1,19 @@
 import React from 'react';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
-import { Footer } from '@/components/footer/footer';
 import Head from 'next/head';
+import { withInitialC15TData } from '@c15t/nextjs/pages';
 
 import styles from './index.module.css';
-import { Hero } from '@/components/sections/hero';
-import { fetchAssets, fetchTimeSeries } from '@/hooks/use-assets';
 import {
   Layout,
-  Header,
   InfoBox,
   AssetList,
   LinkBox,
   AssetForm,
   AssetCheckboxGroup,
+  Hero,
 } from '@/components';
+import { fetchAssets, fetchTimeSeries } from '@/lib/fetchers';
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Header />
         <Hero>
           <div className={styles.heroContent}>
             <h2>Welcome to Chart Lounge</h2>
@@ -54,14 +52,12 @@ export default function Home() {
         <AssetCheckboxGroup />
         <InfoBox>ℹ️ This page shows how to use SSG with React-Query.</InfoBox>
         <AssetList />
-
-        <Footer />
       </Layout>
     </>
   );
 }
 
-export async function getStaticProps() {
+async function getStaticProps() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
@@ -79,3 +75,4 @@ export async function getStaticProps() {
     },
   };
 }
+withInitialC15TData('http://localhost:8787', getStaticProps);

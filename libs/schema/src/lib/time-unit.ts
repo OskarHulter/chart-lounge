@@ -16,9 +16,8 @@ export const alhpaVantageTimeUnitSchema = z.object({
   '4. close': z.number(),
   '5. volume': z.number(),
 });
-
 export type TimeUnit = z.infer<typeof timeUnitSchema>;
-export type alhpaVantageTimeUnit = z.infer<typeof alhpaVantageTimeUnitSchema>;
+export type AlhpaVantageTimeUnit = z.infer<typeof alhpaVantageTimeUnitSchema>;
 
 export type PriceHistory = Array<TimeUnit>;
 export type TimeSeriesData = PriceHistory;

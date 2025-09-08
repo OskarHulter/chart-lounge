@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
-import ExamplePopover from '@/components/popover/example-popover';
+import ExamplePopover from '../../popover/example-popover';
 const currentYear = new Date().getFullYear();
 
 export function Footer() {

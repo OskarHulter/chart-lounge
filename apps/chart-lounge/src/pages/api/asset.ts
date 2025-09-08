@@ -1,5 +1,5 @@
+import { getStockData } from '@/lib/fetchers';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getStockData } from '@/lib/handler/fetch';
 type ResponseData = {
   message: string;
   result?: ReturnType<typeof getStockData> | null;
@@ -23,3 +23,7 @@ export default async function handler(
     });
   }
 }
+
+export const config = {
+  runtime: 'nodejs',
+};

@@ -12,14 +12,15 @@ const { composePlugins, withNx } = require('@nx/next');
  **/
 const nextConfig = {
   reactStrictMode: true,
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/c15t/:path*',
-  //       destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: '/api/c15t/:path*',
+        destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
+      },
+    ];
+  },
+
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
   /**

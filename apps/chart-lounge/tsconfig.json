@@ -50,7 +50,9 @@
     "src/**/*.tsx",
     "src/**/*.js",
     "src/**/*.cjs",
-    "src/**/*.jsx"
+    "src/**/*.jsx",
+    "../../libs/server-handlers/src/lib/fetch.ts",
+    "../../libs/server-handlers/src/lib/internal.ts"
   ],
   "exclude": [
     "out-tsc",
