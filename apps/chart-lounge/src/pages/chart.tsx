@@ -1,4 +1,4 @@
-import type { PriceHistory } from '@/lib/schema/asset';
+import { type PriceHistory } from '@chart-lounge/schema';
 import {
   dehydrate,
   QueryClient,

@@ -1,0 +1,20 @@
+{
+  "name": "server-handlers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-handlers/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-handlers",
+        "tsConfig": "libs/server-handlers/tsconfig.lib.json",
+        "packageJson": "libs/server-handlers/package.json",
+        "main": "libs/server-handlers/src/index.ts",
+        "assets": ["libs/server-handlers/*.md"]
+      }
+    }
+  }
+}

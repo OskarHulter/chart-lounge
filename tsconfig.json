@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
@@ -8,6 +9,15 @@
     },
     {
       "path": "./apps/chart-lounge"
+    },
+    {
+      "path": "./libs/schema"
+    },
+    {
+      "path": "./libs/server-handlers"
+    },
+    {
+      "path": "./apps/job-orchestrator"
     }
   ]
 }
