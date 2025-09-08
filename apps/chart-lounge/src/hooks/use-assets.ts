@@ -1,4 +1,4 @@
-import type { generateTimeStream } from '@/lib/data-generators/helpers';
+import type { PriceHistory } from '@/lib/schema/asset';
 import { useQuery } from '@tanstack/react-query';
 
 type Asset = {
@@ -7,9 +7,7 @@ type Asset = {
   body: string;
 };
 
-const fetchTimeSeries = async (
-  limit = 100
-): Promise<Array<ReturnType<typeof generateTimeStream>>> => {
+const fetchTimeSeries = async (limit = 100): Promise<Array<PriceHistory>> => {
   const response = await fetch('/api/generate-price-history');
   const data = await response.json();
   return data.filter((x: Asset) => x.id <= limit);

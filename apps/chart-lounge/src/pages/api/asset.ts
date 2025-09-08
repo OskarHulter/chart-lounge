@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { generateTimeStream } from '@/lib/data-generators/helpers';
+import { getStockData } from '@/lib/handler/fetch';
 type ResponseData = {
   message: string;
-  result?: ReturnType<typeof generateTimeStream> | null;
+  result?: ReturnType<typeof getStockData> | null;
   status?: 'success' | 'error' | 'pending';
 };
 
@@ -11,7 +11,8 @@ export default async function handler(
   res: NextApiResponse<ResponseData>
 ) {
   try {
-    const result = await generateTimeStream(req.body.parse());
+    const result = await getStockData({ symbol: 'IBM' });
+    console.log('result', result);
     res.status(200).send({ result, message: 'Data fetched successfully' });
   } catch (err) {
     console.error('Error generating time stream:', err);

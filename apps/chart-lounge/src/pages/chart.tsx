@@ -1,4 +1,4 @@
-import type { TimeSeriesData } from '@/lib/data-generators/helpers';
+import type { PriceHistory } from '@/lib/schema/asset';
 import {
   dehydrate,
   QueryClient,
@@ -10,7 +10,7 @@ export type AssetPageProps = {
   dehydratedState: DehydratedState;
 };
 
-export async function getTimeSeriesData(): Promise<TimeSeriesData> {
+export async function getTimeSeriesData(): Promise<PriceHistory> {
   return fetch('/api/generate-price-history').then((res) => res.json());
 }
 

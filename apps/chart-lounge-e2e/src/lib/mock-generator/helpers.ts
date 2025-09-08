@@ -23,7 +23,7 @@ export function generateFakeAsset(seed: string) {
   };
 }
 
-export function generateOHCLV(seed: string) {
+export function generateOHLCV(seed: string) {
   const low = copycat.float(seed, { min: 0.1, max: 5000 });
   const high = copycat.float(seed, { min: low, max: 10000 });
   const open = copycat.float(seed, { min: low, max: high });
@@ -39,15 +39,15 @@ export function generateOHCLV(seed: string) {
   };
 }
 export function generateTimeUnit(seed: string) {
-  const OHCLV = generateOHCLV(seed);
+  const OHLCV = generateOHLCV(seed);
   const timestamp = copycat.dateString(seed);
   return {
-    ...OHCLV,
+    ...OHLCV,
     timestamp,
   };
 }
 
-export type TimeSeriesData = Array<ReturnType<typeof generateTimeUnit>>;
+export type TimeSeriesData = Array<TimeUnit>;
 export function generateTimeStream(seed: string, length = 200) {
   const timeStream: TimeSeriesData = [];
 
