@@ -2,6 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('Home page screenshot matches previous run', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(2000);
+
   const locator = page.locator('body').describe('Targets the full page');
   const screenshot = await locator.screenshot(); // { fullPage: true }
 
