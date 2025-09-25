@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.skip('Home ARIA snapshot matches previous run', async ({ page }) => {
+test('Home ARIA snapshot matches previous run', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
 
