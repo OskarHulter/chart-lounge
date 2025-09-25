@@ -28,7 +28,7 @@
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    "customConditions": ["development"],
+    "customConditions": ["@chart-lounge/source"],
     "baseUrl": ".",
     "paths": {
       "@chart-lounge/schema": ["libs/schema/src/index.ts"],
