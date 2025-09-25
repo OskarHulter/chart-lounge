@@ -24,7 +24,8 @@ export const defaultPlaywrightConfig: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   // Opt out of parallel tests on CI.
   workers: process.env.CI ? 1 : undefined,
-  updateSnapshots: 'changed',
+  updateSnapshots: process.env.CI ? 'all' : 'changed',
+  ignoreSnapshots: process.env.CI ? true : false,
   // Reporter to use
   reporter: 'html',
   snapshotPathTemplate:
