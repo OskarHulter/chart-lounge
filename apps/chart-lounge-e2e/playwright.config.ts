@@ -6,4 +6,5 @@ require('dotenv').config();
 export default defineConfig({
   ...nxE2EPreset(__filename, { testDir: './src' }),
   ...defaultPlaywrightConfig,
+  updateSnapshots: 'all',
 });
